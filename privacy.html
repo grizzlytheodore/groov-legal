@@ -7,15 +7,14 @@
   <style>
     body { max-width: 820px; margin: 0 auto; padding: 32px 16px; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; color: #111827; background: #f9fafb; }
     h1, h2, h3 { color: #111827; }
-    h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
     h2 { margin-top: 2rem; font-size: 1.25rem; }
     h3 { margin-top: 1.25rem; font-size: 1.05rem; }
     a { color: #2563eb; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .muted { color: #6b7280; font-size: 0.9rem; }
     ul { padding-left: 1.25rem; }
-    code { background: #eef2ff; padding: 0 6px; border-radius: 6px; }
-    .box { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 14px 14px; }
+    .box { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 14px; }
   </style>
 </head>
 <body>
@@ -28,161 +27,96 @@
 
   <h2>1. What Groov Does</h2>
   <p>
-    Groov helps you identify vinyl records (from photos), fetch album metadata (e.g., artist, tracklist, community stats), and find/play matching videos (e.g., full albums or tracks) using YouTube.
+    Groov helps users identify vinyl records from photos, view album metadata, and discover and play matching music-related videos.
   </p>
 
   <h2>2. Information We Collect</h2>
 
   <h3>2.1 Account and Profile Information (if you sign in)</h3>
-  <p>
-    If you create an account or sign in (e.g., Google, Apple, phone), we may collect:
-  </p>
   <ul>
-    <li><strong>Identifiers:</strong> Firebase Auth UID</li>
-    <li><strong>Contact / profile:</strong> email (if provided), display name, first/last name (if provided), profile photo URL (if provided), phone number (if provided)</li>
-    <li><strong>Auth metadata:</strong> sign-in provider (e.g., Google/Apple/phone), account creation time, last login time</li>
-    <li><strong>Policy acceptance:</strong> timestamp of latest Terms/Privacy acceptance (if this feature is enabled)</li>
+    <li>Firebase Authentication UID</li>
+    <li>Email address and basic profile details (if provided)</li>
+    <li>Authentication provider (e.g., Google, Apple)</li>
+    <li>Account creation and last login timestamps</li>
+    <li>Timestamp of latest Terms / Privacy acceptance (if enabled)</li>
   </ul>
 
-  <h3>2.2 Scan History (per user)</h3>
+  <h3>2.2 Scan History</h3>
   <p>
-    To show your scan history inside the app, we store scan events under your user account. Each scan history entry may include:
+    We store scan history associated with your account to display past scans in the app. This may include artist, album title, release year, thumbnail URL, and scan timestamp.
   </p>
-  <ul>
-    <li>Discogs release ID (reference to cached album data)</li>
-    <li>Timestamp of scan</li>
-    <li>Artist/title (denormalized for fast display)</li>
-    <li>Optional: thumbnail URL, year, and format</li>
-  </ul>
 
-  <h3>2.3 Cached Album & Video Match Data (shared cache)</h3>
+  <h3>2.3 Cached Album & Video Data</h3>
   <p>
-    Groov caches publicly available album metadata and video matches to reduce repeated API calls and improve performance. This cache may include:
+    Groov caches publicly available album metadata and video matches to reduce repeated API calls and improve performance. Cached data may include Discogs metadata, pricing suggestions, and YouTube video IDs with search queries.
   </p>
-  <ul>
-    <li><strong>Album metadata (Discogs):</strong> artist(s), title, year/country, labels/genres/styles/formats, catalog number, notes, community rating/have/want, pricing suggestions</li>
-    <li><strong>Images:</strong> thumbnail / cover URLs and/or an optional cached thumbnail reference (e.g., a storage URL)</li>
-    <li><strong>YouTube matches:</strong> a video ID and the search query used to find it (album-level; track-level only when you tap play on a track)</li>
-    <li><strong>Cache timestamps:</strong> when cached data was last updated</li>
-  </ul>
 
-  <h3>2.4 Scan Metrics & Debugging Logs</h3>
+  <h3>2.4 Scan Metrics & Debug Logs</h3>
   <div class="box">
-    <p style="margin-top:0;">
-      <strong>Important:</strong> Groov keeps a <code>scan_metrics</code> log for analytics and debugging (e.g., performance, failure causes, cache hit rate).
+    <p>
+      Groov maintains internal scan metrics for reliability and debugging. These logs may include scan timestamps, success/failure indicators, API error details, cache hit flags, response times, and <strong>raw AI response output</strong> used to identify records.
     </p>
-    <p style="margin-bottom:0;">
-      This may include:
-    </p>
-    <ul>
-      <li>User ID (Firebase Auth UID)</li>
-      <li>Timestamp of scan</li>
-      <li>AI response time (ms), success/failure flags</li>
-      <li><strong>Raw AI response JSON</strong> (e.g., the model’s output used to derive artist/title)</li>
-      <li>Discogs success/cached flags, failure reason, HTTP status, and error message when applicable</li>
-      <li>When available: resulting release ID, artist/title tied to the scan</li>
-    </ul>
   </div>
 
-  <h3>2.5 Support Communications</h3>
+  <h3>2.5 Photos You Upload</h3>
   <p>
-    If you contact us at <a href="mailto:support@groovvinyl.com">support@groovvinyl.com</a>, we receive the information you include (such as your email address, message content, and attachments).
+    Photos you take or upload (e.g., record covers or labels) are processed solely to identify records and retrieve metadata. Images are not sold, used for advertising, or shared beyond what is necessary to provide the Service.
   </p>
 
-  <h3>2.6 Device & Usage Data</h3>
+  <h3>2.6 Support Communications</h3>
   <p>
-    We may collect basic device and app usage information for reliability and security, such as device model, OS version, app version, crash logs, and technical logs.
+    If you contact us at <a href="mailto:support@groovvinyl.com">support@groovvinyl.com</a>, we receive the information you choose to provide.
   </p>
 
-  <h2>3. Photos and Content You Upload</h2>
-  <p>
-    Groov lets you take or upload photos of records (e.g., cover, label, spine) so the app can identify the album and fetch metadata. Images you provide may be transmitted to our backend and to third-party services strictly to provide the Service (identification and metadata lookup).
-  </p>
-  <p>
-    We do not use your uploaded photos for advertising, and we do not sell your uploaded photos.
-  </p>
-
-  <h2>4. How We Use Information</h2>
+  <h2>3. How We Use Information</h2>
   <ul>
-    <li>Provide core app functionality (scan → identify → show metadata → play matching videos)</li>
-    <li>Maintain your scan history and account (if you use sign-in)</li>
-    <li>Cache album metadata and video matches to improve speed and reduce API calls</li>
-    <li>Monitor performance, diagnose failures, and improve reliability (including via scan metrics)</li>
-    <li>Prevent abuse and secure the Service</li>
+    <li>Provide and operate the Service</li>
+    <li>Identify records and retrieve metadata</li>
+    <li>Search for and play music-related videos</li>
+    <li>Maintain scan history and cached data</li>
+    <li>Improve reliability, performance, and security</li>
     <li>Respond to support requests</li>
-    <li>Comply with legal obligations and enforce our Terms</li>
   </ul>
+
+  <h2>4. AI Usage</h2>
+  <p>
+    Groov uses automated systems, including AI models, to analyze images and identify records. AI outputs are used solely to provide the Service and improve reliability. We do not use user data to train third-party AI models.
+  </p>
 
   <h2>5. Third-Party Services</h2>
 
   <h3>5.1 YouTube API Services</h3>
   <p>
-    Groov uses <strong>YouTube Data API Services</strong> to search for and display/play music-related videos (e.g., albums and tracks). Groov may display YouTube video titles, thumbnails, channels, and enable playback.
+    Groov uses <strong>YouTube Data API Services</strong> to search for and display music-related videos. By using Groov, you agree to the
+    <a href="https://www.youtube.com/t/terms" target="_blank">YouTube Terms of Service</a> and
+    <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.
   </p>
   <p>
-    By using Groov, you agree to be bound by:
+    Groov does not use YouTube OAuth and does not access or store your YouTube account data.
   </p>
-  <ul>
-    <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a></li>
-    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
-  </ul>
+
+  <h3>5.2 Discogs and Metadata Providers</h3>
   <p>
-    Groov does <strong>not</strong> use YouTube OAuth to access your personal YouTube account, and we do <strong>not</strong> collect or store your YouTube account credentials, subscriptions, playlists, or watch history.
+    Album metadata is retrieved from third-party providers such as Discogs and cached for performance.
   </p>
 
-  <h3>5.2 Discogs (Metadata)</h3>
+  <h2>6. Data Retention</h2>
   <p>
-    Groov fetches album information from third-party metadata providers such as Discogs. Cached metadata may be stored to reduce repeated requests.
+    We retain data for as long as necessary to provide the Service, comply with legal obligations, and support reliability and security.
   </p>
 
-  <h3>5.3 Cloud Infrastructure (Firebase / Hosting)</h3>
+  <h2>7. Account Deletion</h2>
   <p>
-    Groov uses cloud services to host and operate parts of the Service (including authentication, database storage for caches and user data, and storage for thumbnails where applicable).
+    You may request deletion of your account and associated personal data by contacting
+    <a href="mailto:support@groovvinyl.com">support@groovvinyl.com</a>. Upon verification, we will delete or anonymize your personal data, except where retention is required by law or legitimate business purposes.
   </p>
 
-  <h2>6. Sharing of Information</h2>
-  <p>We may share information:</p>
-  <ul>
-    <li>With service providers who operate the Service (hosting, databases, analytics, error monitoring)</li>
-    <li>With third-party APIs (e.g., YouTube / Discogs) to fulfill searches and metadata retrieval</li>
-    <li>When required by law, or to protect rights, safety, and security</li>
-    <li>As part of a business transfer (e.g., merger/acquisition), with appropriate safeguards</li>
-  </ul>
-  <p><strong>We do not sell your personal information.</strong></p>
-
-  <h2>7. Data Retention</h2>
+  <h2>8. Children’s Privacy</h2>
   <p>
-    We retain information for as long as necessary to provide the Service and for legitimate business purposes such as debugging, security, and compliance.
-  </p>
-  <ul>
-    <li><strong>User account data:</strong> retained while your account is active (and for a reasonable period after for compliance/security)</li>
-    <li><strong>Scan history:</strong> retained to show your history unless you delete your account (or until we delete it as part of account deletion)</li>
-    <li><strong>Cache data (album metadata / video matches):</strong> retained to improve performance and reduce API calls; entries are periodically refreshed/overwritten</li>
-    <li><strong>Scan metrics:</strong> retained for debugging and analytics; may include AI response JSON and error details</li>
-  </ul>
-
-  <h2>8. Security</h2>
-  <p>
-    We use reasonable administrative, technical, and organizational safeguards designed to protect information. However, no system is 100% secure.
+    Groov is not directed to children under 13, and we do not knowingly collect personal information from children.
   </p>
 
-  <h2>9. Children’s Privacy</h2>
-  <p>
-    Groov is not directed to children under 13 (or the equivalent age in your jurisdiction). We do not knowingly collect personal information from children.
-  </p>
-
-  <h2>10. Your Rights and Choices</h2>
-  <p>
-    Depending on your location, you may have rights to access, correct, or delete certain personal information. To request help with these rights, contact us at
-    <a href="mailto:support@groovvinyl.com">support@groovvinyl.com</a>.
-  </p>
-
-  <h2>11. Changes to This Privacy Policy</h2>
-  <p>
-    We may update this Privacy Policy from time to time. We will update the “Last updated” date at the top when changes are made.
-  </p>
-
-  <h2>12. Contact</h2>
+  <h2>9. Contact</h2>
   <p>
     <strong>StudioTCHoldings LLC</strong><br>
     Email: <a href="mailto:support@groovvinyl.com">support@groovvinyl.com</a>
