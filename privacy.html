@@ -19,7 +19,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: December 18, 2025</p>
+  <p class="muted">Last updated: July 24, 2026</p>
 
   <p>
     This Privacy Policy explains how <strong>StudioTCHoldings LLC</strong> (“we”, “us”, “our”) collects, uses, and shares information when you use the Groov mobile application and related services (the “Service”).
@@ -92,7 +92,7 @@
     <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.
   </p>
   <p>
-    Groov does not use YouTube OAuth and does not access or store your YouTube account data.
+    Groov does not use YouTube OAuth and does not access or store your YouTube account data. Video searches sent to the YouTube API are based on album and track metadata (artist and title), not on your personal information. Cached YouTube API data (such as matched video identifiers) is deleted or refreshed at least every 30 calendar days. When you play a video, it is played through YouTube's embedded player &mdash; see Section 7 (Cookies and On-Device Storage) for how YouTube and Google may collect information from your device.
   </p>
 
   <h3>5.2 Discogs and Metadata Providers</h3>
@@ -100,22 +100,63 @@
     Album metadata is retrieved from third-party providers such as Discogs and cached for performance.
   </p>
 
-  <h2>6. Data Retention</h2>
+  <h2>6. How We Share Information</h2>
   <p>
-    We retain data only for as long as necessary to provide the Service and support reliability and security.
+    We do not sell your personal information, and we do not share it with third parties for their own advertising or marketing purposes.
+  </p>
+  <h3>6.1 Internal Access</h3>
+  <p>
+    Within StudioTCHoldings LLC, access to user information is limited to personnel who need it to operate, maintain, debug, and support the Service.
+  </p>
+  <h3>6.2 Service Providers (External Parties)</h3>
+  <p>
+    We share information with third-party service providers only as necessary to provide the Service:
+  </p>
+  <ul>
+    <li><strong>Google Firebase</strong> &mdash; authentication, database storage (account data, scan history, cached data), and crash reporting (Crashlytics).</li>
+    <li><strong>Microsoft Azure</strong> &mdash; hosting for our backend services; photos you submit are processed on Azure infrastructure.</li>
+    <li><strong>OpenAI / Azure OpenAI</strong> &mdash; photos you submit are analyzed by AI models to identify records. Your data is not used to train these models.</li>
+    <li><strong>Discogs</strong> &mdash; album metadata lookups; queries contain record identification details, not your personal information.</li>
+    <li><strong>YouTube API Services (Google)</strong> &mdash; video search queries derived from album and track metadata; no personal information is sent in these queries.</li>
+  </ul>
+  <h3>6.3 Legal and Safety</h3>
+  <p>
+    We may disclose information if required to do so by law or in the good-faith belief that such action is necessary to comply with legal obligations, protect the rights, property, or safety of our users or others, or investigate fraud or abuse.
+  </p>
+  <h3>6.4 Business Transfers</h3>
+  <p>
+    If StudioTCHoldings LLC is involved in a merger, acquisition, or sale of assets, user information may be transferred as part of that transaction. We will notify you of any change in ownership or use of your personal information.
   </p>
 
-  <h2>7. Account Deletion</h2>
+  <h2>7. Cookies and On-Device Storage</h2>
+  <p>
+    Groov stores, accesses, and collects information on your device, and allows certain third parties to do so, as described below:
+  </p>
+  <ul>
+    <li><strong>App storage:</strong> Groov stores data locally on your device to operate the app, including authentication tokens (via Firebase), app preferences (such as your acceptance of our Terms and this Privacy Policy), and temporary cached images and metadata.</li>
+    <li><strong>Embedded YouTube player:</strong> videos are played using YouTube's embedded player. When you play a video, YouTube and Google may place, access, or recognize cookies or similar technologies on your device or browser and may collect information such as viewing activity and device identifiers, in accordance with the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</li>
+    <li><strong>Crash reporting:</strong> Firebase Crashlytics may collect device information (such as device model, OS version, and crash traces) from your device to help us diagnose and fix problems.</li>
+  </ul>
+  <p>
+    Groov does not use cookies or on-device storage for advertising or cross-site tracking.
+  </p>
+
+  <h2>8. Data Retention</h2>
+  <p>
+    We retain data only for as long as necessary to provide the Service and support reliability and security. Cached data retrieved from YouTube API Services is stored for no longer than 30 calendar days, after which it is deleted or refreshed. Account data and scan history are retained until you delete your account (see Section 9).
+  </p>
+
+  <h2>9. Account Deletion</h2>
   <p>
     You can delete your account directly from within the app. When you delete your account, we permanently delete your personal data associated with your account, including your profile and scan history. Deletion is processed immediately or as soon as technically possible after confirmation.
   </p>
 
-  <h2>8. Children’s Privacy</h2>
+  <h2>10. Children’s Privacy</h2>
   <p>
     Groov is not directed to children under the age of 13, and we do not knowingly collect personal information from children.
   </p>
 
-  <h2>9. Contact</h2>
+  <h2>11. Contact</h2>
   <p>
     <strong>StudioTCHoldings LLC</strong><br>
     Email: <a href="mailto:support@groovvinyl.com">support@groovvinyl.com</a>
