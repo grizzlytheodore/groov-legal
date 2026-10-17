@@ -19,11 +19,13 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: July 24, 2026</p>
+  <p class="muted">Last updated: October 17, 2026 — version 2026-10-17</p>
 
   <p>
     This Privacy Policy explains how <strong>StudioTCHoldings LLC</strong> (“we”, “us”, “our”) collects, uses, and shares information when you use the Groov mobile application and related services (the “Service”).
   </p>
+
+  <div class="box"><p><strong>About this update:</strong> This version describes retention of de-identified scan and release-choice information after account deletion. It applies to your existing and future scan records only after you explicitly acknowledge version 2026-10-17 in a compatible Groov app. Until then, the <a href="privacy-2026-07-24.html">previous privacy policy</a> continues to govern account deletion. Updating this webpage alone does not opt you in.</p></div>
 
   <h2>1. What Groov Does</h2>
   <p>
@@ -43,7 +45,7 @@
 
   <h3>2.2 Scan History</h3>
   <p>
-    We store scan history associated with your account to display your past scans in the app. Scan history may include artist, album title, release year, thumbnail URL, format, and scan timestamp.
+    While your account is active, we store scan history to display your past scans in the app. This may include artist, album title, release year, thumbnail URL, format, scan time, AI confidence, candidate releases, and the releases you choose. One scan may have several later release choices. For users who acknowledge this policy version, we may retain de-identified record and choice information after account deletion as described in Sections 8 and 9.
   </p>
 
   <h3>2.3 Cached Album & Video Data</h3>
@@ -54,7 +56,7 @@
   <h3>2.4 Scan Metrics & Debug Logs</h3>
   <div class="box">
     <p>
-      Groov maintains internal scan metrics for reliability and debugging. These logs may include scan timestamps, success or failure indicators, API error details, cache hit flags, response times, and <strong>raw AI response output</strong> used to identify records.
+      Groov maintains scan metrics for reliability, product analysis, and debugging. Active-account records may include account, device, session, scan, and request identifiers; scan outcomes; release choices; API usage; cache hits; response times; and record-identification fields from AI responses. Our retained analytical records use an allowlist and exclude raw error text and original identifying event IDs after account deletion. Operational diagnostic logs may contain identifiers until their configured retention period expires.
     </p>
   </div>
 
@@ -143,12 +145,18 @@
 
   <h2>8. Data Retention</h2>
   <p>
-    We retain data only for as long as necessary to provide the Service and support reliability and security. Cached data retrieved from YouTube API Services is stored for no longer than 30 calendar days, after which it is deleted or refreshed. Account data and scan history are retained until you delete your account (see Section 9).
+    We retain data only for as long as needed to provide and improve the Service and support reliability and security. Cached YouTube API data is deleted or refreshed within 30 calendar days. Account profiles and app-accessible personal history remain associated with your account while it is active.
+  </p><p>
+    If you acknowledge this policy version, we may preserve scan, candidate-release, release-choice, and technical performance facts for product analysis after account deletion. We remove their direct account links, replace original scan and choice identifiers with fresh random identifiers, and reduce event times to reporting days. The retained archive excludes profile name, email, phone number, Firebase UID, device and session identifiers, original request IDs, authentication or selection tokens, and raw error text. We may keep a random grouping identifier to understand related scans and choices, without retaining a completed account-to-archive lookup. We do not attempt to reconnect retained analytical records to your identity or use them to restore your personal account history.
+  </p><p>
+    Operational logs and backup copies can retain identifiers for limited periods under their configured security, debugging, and recovery schedules. They are restricted to those purposes, are not the retained product-analysis archive, and expire or rotate under the applicable schedule. A restoration must reapply account deletions before making restored personal data available. A minimal account or retired-device deletion marker may remain to prevent stale credentials or background jobs from reactivating deleted data.
   </p>
 
   <h2>9. Account Deletion</h2>
   <p>
-    You can delete your account directly from within the app. When you delete your account, we permanently delete your personal data associated with your account, including your profile and scan history. Deletion is processed immediately or as soon as technically possible after confirmation.
+    You can delete your account within the app, or contact support@groovvinyl.com for help. Deletion removes your authentication account, profile information, personal history access, and the original account-linked history records. If you have acknowledged version 2026-10-17, we first preserve the de-identified scan and release-choice information described in Section 8, then remove the original records and the temporary mappings used to complete that process. This applies to scans made before and after your acknowledgement. If you have not acknowledged this version, we do not apply the new history-preservation practice to your account.
+  </p><p>
+    Background processing and retries may be needed to finish deletion. If a step fails, we keep the account in a deleting state and resume safely; we do not report completion until the required archival and removal steps finish. Deleting an account does not provide a way to recover the profile or personal history from the analytical archive. This policy does not limit any applicable rights to request deletion of personal information.
   </p>
 
   <h2>10. Children’s Privacy</h2>
